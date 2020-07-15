@@ -1,0 +1,56 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+::root {
+  font-size: 62.5%;
+}
+
+/* hoover selector - dropdown menu */
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+section {
+  display: inline-block;
+  margin: 1rem 0 0 1rem;
+  position: relative;
+}
+section > a {
+  display: inline-block;
+  padding: 2rem;
+  font-size: 2rem;
+  background-color: midnightblue;
+  color: aliceblue;
+}
+div {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0.2rem 0.3rem 0.4rem grey;
+}
+div a {
+    color: midnightblue;
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 0.2rem;
+    transition: all 0.5s ease-in-out;
+}
+div a:hover {
+    color: aliceblue;
+    background-color: midnightblue;
+}
+section:hover div{
+    display: block;
+}
+section:hover > a {
+    background-color: aliceblue;
+    color: midnightblue;
+}
