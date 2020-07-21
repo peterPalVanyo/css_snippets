@@ -28,29 +28,90 @@ section > a {
   color: aliceblue;
 }
 div {
-    display: none;
-    position: absolute;
-    background-color: aliceblue;
-    width: 100%;
-    z-index: 1;
-    box-shadow: 0.2rem 0.3rem 0.4rem grey;
+  display: none;
+  position: absolute;
+  background-color: aliceblue;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0.2rem 0.3rem 0.4rem grey;
 }
 div a {
-    color: midnightblue;
-    display: block;
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-bottom: 0.2rem;
-    transition: all 0.5s ease-in-out;
+  color: midnightblue;
+  display: block;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 0.2rem;
+  transition: all 0.5s ease-in-out;
 }
 div a:hover {
-    color: aliceblue;
-    background-color: midnightblue;
+  color: aliceblue;
+  background-color: midnightblue;
 }
-section:hover div{
-    display: block;
+section:hover div {
+  display: block;
 }
 section:hover > a {
-    background-color: aliceblue;
-    color: midnightblue;
+  background-color: aliceblue;
+  color: midnightblue;
 }
+
+/* tooltip for text */
+
+article {
+  text-align: center;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: darkred;
+  color: aliceblue;
+  border-radius: 0.5rem;
+  width: 200px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.header {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  margin-bottom: 10px;
+}
+
+.text {
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: 10px;
+}
+
+.tooltip::after{
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.header::after{
+  border-color: darkred transparent transparent transparent;
+  top: 100%;
+}
+
+.text::after{
+  border-color: transparent transparent darkred transparent;
+  bottom: 100%;
+}
+
+article:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
