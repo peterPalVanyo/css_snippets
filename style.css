@@ -74,6 +74,7 @@ article {
   visibility: hidden;
   opacity: 0;
   transition: all 1s ease-in-out;
+  z-index: 1;
 }
 
 .header {
@@ -112,6 +113,75 @@ article {
 article:hover .tooltip {
   visibility: visible;
   opacity: 1;
+}
+
+/* button style practice */
+/* moving 3rd dimensionally */
+
+
+button#rd {
+  cursor: pointer;
+  outline: none;
+  display: block;
+  border: none;
+  font-size: 2rem;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: darkslateblue;
+  color: aliceblue;
+  box-shadow: 0 0.7rem 0 0 gray;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+button#rd:active {
+  /* margin: 2.5rem auto 2rem auto; */
+  transform: translateY(0.5rem);
+  box-shadow: 0 0.2rem 0 0 gray;
+}
+
+button#rd:hover {
+  background-color: rebeccapurple;
+  color: darkturquoise;
+}
+
+/* button style practice */
+/* opacity ripple */
+
+button#magic {
+  cursor: pointer;
+  outline: none;
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: forestgreen;
+  color: aqua;
+  position: relative;
+  overflow: hidden;
+}
+
+button#magic::after {
+  position: absolute;
+  content: "";
+  background-color: white;
+  padding-top: 150%;
+  padding-left: 150%;
+  display: block;
+  margin-left: -2rem !important;
+  margin-top: -100%;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: all 1s;
+}
+
+button#magic:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: 0.8;
+  transition: 0s;
 }
 
 
