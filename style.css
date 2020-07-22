@@ -185,3 +185,43 @@ button#magic:active::after {
 }
 
 
+/* hoover effect, the button width hide the content+padding as opportunity to play with span padding */
+
+button#arrow {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  background-color: indianred;
+  color: aliceblue;
+  display: block;
+  width: 16rem;
+  margin: 1rem auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+button#arrow span {
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+
+button#arrow span::after {
+  content: "\00bb";
+  position: absolute;
+  color: aliceblue;
+  top: 0;
+  right: -2.5rem;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+button#arrow:hover span {
+  padding-right: 2.5rem;
+}
+
+button#arrow:hover span::after {
+  opacity: 1;
+  right: 0;
+}
