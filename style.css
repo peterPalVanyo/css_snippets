@@ -264,3 +264,41 @@ input[type="checkbox"]::before {
 input:checked[type="checkbox"]::before {
   left: 5rem;
 }
+/* border line button */
+button#line {
+  margin: 1rem 40%;
+  width: 20rem;
+  height: 10rem;
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+button#line::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border-top: 0.5rem solid grey;
+  border-left: 0.5rem solid grey;
+  transition: all 1s ease-in;
+}
+button#line::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  border-bottom: 0.5rem solid grey;
+  border-right: 0.5rem solid grey;
+  transition: all 1s ease-in;
+}
+button#line:hover::before, button#line:hover::after {
+  width: 20rem;
+  height: 10rem;
+}
